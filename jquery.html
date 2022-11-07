@@ -12,25 +12,25 @@
     <script>
         $(document).ready(function(){
           $(".ab").click(function(){
-            $("p").hide();
+            $(".ab").hide();
           });
         });
         </script>
-
-   <!-- <script>
-    $(document).ready(function(){
-      $(".ab").click(function(){
-        $(this).hide();
-      });
-    });
-    </script> -->
-
 </head>
 <body>
     <p >If you click on me, I will disappear.</p>
     <p >Click me away!</p>
     <p>Click me too!</p>
     <br>
+
+    <script>
+      $(document).ready(function(){
+        $("p").click(function(){
+          $(this).hide();
+        });
+      });
+      </script>
+
     <h1 class="ab">If you click on me, I will disappear.</h1>
     <p class="ab">Click me away!</p>
     <p class="bc">Click me too!</p>
