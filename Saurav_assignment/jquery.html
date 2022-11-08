@@ -76,8 +76,8 @@
        </script>
        <p>If you double-click on me, I will disappear.</p>
    
-       <!-- jQueery Events-->
-      <h1> Jquery Events </h1>
+       <!-- jQueery Events Mouse Event-->
+      <h1> Jquery Events Mouse Event </h1>
        <script>
          $(document).ready(function(){
         //    $("#p1").mouseenter(function(){
@@ -120,7 +120,49 @@
          Name: <input type="text" name="fullname"><br>
          Email: <input type="text" name="email">
 
-         <!-- jquery Effects -->
+         <!-- jQuery  Form Event submit() -->
+         <h1>jQuery  Form Event</h1>
+         <script>
+          $(document).ready(function(){
+            $("form").submit(function(){
+              alert("Submitted");
+            });
+
+            $("input").change(function(){
+              alert("The text has been changed.");
+            });
+
+             $("input").focus(function(){
+             $("span").css("display", "inline").fadeOut(2000);
+           });
+               
+             $("input").blur(function(){
+              alert("This input field has lost its focus.");
+            });
+
+          });
+          </script>
+
+            <form action="">
+            First name: <input type="text" name="FirstName" value=""><br>
+            Last name: <input type="text" name="LastName" value=""><br>
+            <input type="submit" value="Submit">
+            </form> 
+            <br>
+            <input type="text">
+            <p>Write something in the input field, and then press enter or click outside the field.</p>
+            <br>
+            <input>
+            <span>Nice to meet you!</span>
+            <p>Click in the input field to get focus.</p>
+            <br>
+             Enter your name: <input type="text">
+            <p>Write something in the input field, and then click outside the field to lose focus (blur).</p>
+
+
+
+
+         <!-- jquery Effects  -->
          <!-- jquery Effects Hide and Show -->
          <h1> Jquery Effect</h1>
          <script>
@@ -256,8 +298,68 @@
             <h1>jQuery Effects Animation</h1>
             <button>Start Animation</button>
             
-            <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+            <div style="background:#98bf21;height:100px;width:100px;"></div>
+            <div>
+              <h1> jquery Stop Animation </h1>
+              <!-- jQuery Stop Animations-->
+              <script> 
+                $(document).ready(function(){
+                  $("#flips").click(function(){
+                    $("#panels").slideDown(5000);
+                  });
+                  $("#stop").click(function(){
+                    $("#panels").stop();
+                  });
+                });
+                </script>
+                <style> 
+                #panels, #flips {
+                  padding: 5px;
+                  font-size: 18px;
+                  text-align: center;
+                  background-color: #555;
+                  color: white;
+                  border: solid 1px #666;
+                  border-radius: 3px;
+                }
+                
+                #panels {
+                  padding: 50px;
+                  display: none;
+                }
+                </style>
+                <button id="stop">Stop sliding</button>
 
-        
-          </body>
+                <div id="flips">Click to slide down panel</div>
+                <div id="panels">Hello world!</div>
+            </div>
+          <div>
+          <h1> Jquery Call back </h1>
+          <!-- Jquery Call back-->
+          <!-- <script>
+            $(document).ready(function(){
+              $("button").click(function(){
+                $(".call_back").hide("slow", function(){
+                  alert("The paragraph is now hidden");
+                });
+              });
+            });
+            </script> -->
+          </div>
+          <div>
+            <!-- <script>
+              $(document).ready(function(){
+                $("button").click(function(){
+                  $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+                });
+              });
+              </script>
+              </head>
+              <body>
+              
+              <p id="p1">jQuery is fun!!</p>
+              
+              <button>Click me</button> -->
+          </div>
+        </body>
 </html>
