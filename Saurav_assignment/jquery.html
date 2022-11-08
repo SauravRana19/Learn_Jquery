@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     
-    <script src="jquery-3.6.1.js">  </script>
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 <body>
+  <style> *{ 
+    padding:  0 20 0 0;
+    margin: 0 0 10px 0;}
+    body{
+      background-color: rgb(243, 136, 136);
+    }
+    </style>
+  <!-- Jquery Slectors -->
   <!-- Simple hide msg -->
   <script>
       $(document).ready(function(){
@@ -29,18 +37,17 @@
         });
       });
       </script>
-    <h1 class="ab"> click on me, I will disappear.</h1>
+    <p class="ab"> click on me, I will disappear.</p>
    
-    <!-- Hide the Pragraph using Button -->
+    <!-- change color of button -->
     <script>
       $(document).ready(function(){
         $("button").click(function(){
-          $("p").hide();
+          $(this).css("color","blue");
         });
       });
       </script>
-      <p>Use Button to hide Paragraph.</p>
-      <button> hide paragraphs</button>
+      <button> change color of button text </button>
 
      <!-- hide the Paragraph using button and Id -->
       <script>
@@ -76,23 +83,28 @@
        <p>If you double-click on me, I will disappear.</p>
    
        <!-- jQueery Events-->
+      <h1> Jquery Events </h1>
        <script>
          $(document).ready(function(){
-           // $("#p1").mouseenter(function(){
-           //   alert("You entered p1!");
-           // }
-           // $("#p2").mouseleave(function(){
-           //     alert("Bye! You now leave p1!");
-           //   }
-           //   $("#p3").mousedown(function(){
-           //       alert("Mouse down over p1!");
-           //    }),
-           //    $("#p4").mouseup(function(){
-           //      alert("Mouse up over p1!");
-           //    }
-              // $("#p5").hover(function(){
-              //    alert("You entered p1!");
-              //  }),
+           $("#p1").mouseenter(function(){
+             alert("You entered p1!");
+              })
+
+           $("#p2").mouseleave(function(){
+               alert("Bye! You now leave p1!");
+              })
+
+           $("#p3").mousedown(function(){
+                 alert("Mouse down over p1!");
+               })
+
+           $("#p4").mouseup(function(){
+                alert("Mouse up over p1!");
+              })
+
+           $("#p5").hover(function(){
+                 alert("You entered p1!");
+               }),
 
                $("input").focus(function(){
                $(this).css("background-color", "yellow");
@@ -107,8 +119,10 @@
          <!-- <p id="p1">This is a mouseenter.</p>
          <p id="p2">This is a mouseleave.</p>
          <p id="p3">This is a mousedown.</p>
-         <p id="p4">This is a mouseup.</p> -->
-         <p id="p5">This is a hover.</p>
+         <p id="p4">This is a mouseup.</p>
+         <p id="p5">This is a hover.</p> -->
+
+
          Name: <input type="text" name="fullname"><br>
          Email: <input type="text" name="email">
 </body>
