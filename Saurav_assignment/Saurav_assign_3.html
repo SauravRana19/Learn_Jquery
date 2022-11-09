@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+
+     <!-- jquery CDN -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+<style>
+    body{height: auto;
+        width: auto;
+        
+    }
+</style>
+    <!-- jQuery - Get Content and Attributes -->
+    <div style="border: 1px solid black;text-align: center;">
+        <h1>jQuery text and html methods:</h1>
+    <!-- The following example demonstrates how to get content with the jQuery text() and html() methods: -->
+    <script>
+        $(document).ready(function(){
+          $("#btn_text").click(function(){  // shows text
+            alert("Text: " + $("#test_text").text());
+          });
+          $("#btn_html").click(function(){ // shows Html
+            alert("HTML: " + $("#test_html").html());
+          });
+
+          $("#btn_value").click(function(){ // shows value
+            alert("Value: " + $("#test_value").val());
+          });
+
+          $(".btn_att").click(function(){ // show <a> refrence of link
+              alert($("#w3s").attr("href"));
+            });
+
+          });
+          
+        </script>
+
+        <p id="test_text">This is some <b>bold</b> text in a paragraph.</p>
+        <p id="test_html">This is some <b>bold</b> html in a paragraph.</p>
+
+        <button id="btn_text">Show Text</button>
+        <button id="btn_html">Show HTML</button>
+
+        <p id="p_value">Name: <input type="text" id="test_value" value=""></p>
+        <button id="btn_value">Show Value</button>
+
+        <p id="p_att"><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+        <button class="btn_att">Show href Value</button>
+
+    </div>
+    <div style="border: 1px solid black;text-align: center;">
+        
+        <h1> jQuery - Set Content</h1>
+        <!-- jQuery - Set Content -->
+        <script>
+            $(document).ready(function(){
+              $("#btn1").click(function(){  // set the value text to hello world
+                $("#test1").text("Hello world!");
+              });
+              $("#btn2").click(function(){ // set the value of html to hello world
+                $("#test2").html("<b>Hello world!</b>");
+              });
+              $("#btn3").click(function(){ // set the value of field to given in function.
+                $("#test3").val("Saurav Rana ");
+              });
+            });
+            </script>
+            <p id="test1">This is a paragraph.</p>
+            <p id="test2">This is another paragraph.</p>
+            
+            <p>Input field: <input type="text" id="test3" value=""></p>
+            
+            <button id="btn1">Set Text</button>
+            <button id="btn2">Set HTML</button>
+            <button id="btn3">Set Value</button>
+
+            <h1>A Callback Function for text, html, and val</h1>
+            <script>
+                $(document).ready(function(){
+                  $("#btn_old_text").click(function(){
+                    $("#test_old_text").text(function(i, origText){
+                      return "Old text: " + origText + " New text: Hello world! (index: " + i + ")"; 
+                    });
+                  });
+                
+                  $("#btn_old_html").click(function(){
+                    $("#test_old_html").html(function(i, origText){
+                      return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; 
+                    });
+                  });
+
+                  $("#btn_a_href").click(function(){
+                    $("#ws").attr("href", "https://www.w3schools.com/jquery/");
+                  });
+
+                  $("#btn_a_chg").click(function(){
+                  $("#w3").attr("href", function(i, origValue){
+                    return origValue + "/jquery/"; 
+                  });
+                }); 
+
+                });
+                </script>
+
+                <p id="test_old_text">This is a <b>bold</b> paragraph.</p>
+                <p id="test_old_html">This is another <b>bold</b> paragraph.</p>
+                
+                <button id="btn_old_text">Show Old/New Text</button>
+                <button id="btn_old_html">Show Old/New HTML</button>
+
+                <p><a href="https://www.w3schools.com" id="ws">W3Schools.com</a></p>
+                <button id="btn_a_href">Change href Value</button>
+                <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+                <p><a href="https://www.w3schools.com" id="w3">W3Schools.com</a></p>
+                <button id="btn_a_chg">Change href Value</button>
+                <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+    </div>
+    <div style="border: 1px solid black;text-align: center;">
+        <h1> jQuery - Add Elements </h1>
+        <!-- jQuery - Add Elements -->
+        <script>
+            $(document).ready(function(){
+              $("#btn_apnd_txt").click(function(){
+                $("#p1").append(" <b>Appended text</b>.");
+              });
+            
+              $("#btn_apnd_list").click(function(){
+                $("ul").append("<li > List item </li>");
+              });
+
+              $("#btn_pand_text").click(function(){
+                $("#p2").prepend("<b>Prepended text</b>. ");
+              });
+              $("#btn_pand_list").click(function(){
+                $("ol").prepend("<li>Prepended item</li>");
+              });
+
+              $("#btn_in_bf").click(function(){
+                $("img").before("<b>Before</b>");
+              });
+
+              $("#btn_in_af").click(function(){
+                $("img").after("<i>After</i>");
+              });
+
+            });
+            </script>
+            <p id="p1">This is a paragraph.</p>
+            
+            <ul style="list-style-type: none;">
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+            <button id="btn_apnd_txt">Append text</button>
+            <button id="btn_apnd_list">Append list items</button> 
+            
+            <!--  -->
+
+            <p id="p2">This is another paragraph.</p>
+            <ol style="list-style-type: none;">
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ol>
+            <button id="btn_pand_text">Prepend text</button>
+            <button id="btn_pand_list">Prepend list item</button>
+            <br>
+            <!--  --><br>
+            <img src="https://www.w3schools.com/images/w3jquery.gif" alt="jQuery" width="100" height="140"><br><br>
+            <button id="btn_in_bf">Insert before</button>
+            <button id="btn_in_af">Insert after</button>
+
+    </div>
+    <div style="border: 1px solid black;text-align: center;">
+        <!-- jQuery - Remove Elements -->
+        <script>
+            $(document).ready(function(){
+              $("#btn_rem").click(function(){
+                $("#div_rem").remove();
+              });
+
+              $("#btn_emp").click(function(){
+                $("#div_emp").empty();
+             });
+
+            });
+            </script>
+            <div id="div_rem" style="height:100px;width:300px;border:1px solid black;background-color:yellow;margin-left: 40%;margin-top: 10px;">
+                This is some text in the div.
+                <p>This is a paragraph in the div.</p>
+                </div>
+                <br>
+                <button id="btn_rem">Remove div element</button>
+                <!--   -->
+            <div id="div_emp" style="height:100px;width:300px;border:1px solid black;background-color:yellow;margin-left: 40%;margin-top: 10px;">
+                This is some text in the div.
+                <p>This is a paragraph in the div.</p>
+                </div>
+                <br>
+                <button id="btn_emp">Empty the div element</button>
+    </div>
+    <div style="border: 1px solid black;text-align: center;">
+        <!-- jQuery - Get and Set CSS Classes -->
+        <script>
+            $(document).ready(function(){
+              $("#btn_elem").click(function(){
+                $("#h1, #h2, #pra").addClass("blue");
+                $("#div_elem").addClass("important");
+              });
+            });
+            </script>
+            <style>
+            .important {
+              font-weight: bold;
+              font-size: xx-large;
+            }
+            
+            .blue {
+              color: blue;
+            }
+            </style>
+            <h1 id="h1">Heading 1</h1>
+            <h2 id="h2">Heading 2</h2>
+            
+            <p id="pra">This is a paragraph.</p>
+            
+            <div id="div_elem">This is some important text!</div><br>
+            
+            <button id="btn_elem">Add classes to elements</button>
+    </div>
+    
+</body>
+</html>
