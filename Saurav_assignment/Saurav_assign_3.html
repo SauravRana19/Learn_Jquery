@@ -55,6 +55,7 @@
         <button class="btn_att">Show href Value</button>
 
     </div>
+     <!-- jQuery - Set Content -->
     <div style="border: 1px solid black;text-align: center;">
         
         <h1> jQuery - Set Content</h1>
@@ -124,6 +125,7 @@
                 <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
 
     </div>
+    <!-- jQuery - Add Elements -->
     <div style="border: 1px solid black;text-align: center;">
         <h1> jQuery - Add Elements </h1>
         <!-- jQuery - Add Elements -->
@@ -181,8 +183,10 @@
             <button id="btn_in_af">Insert after</button>
 
     </div>
+    <!-- jQuery - Remove Elements -->
     <div style="border: 1px solid black;text-align: center;">
         <!-- jQuery - Remove Elements -->
+        <h1>jQuery - Remove Elements</h1>
         <script>
             $(document).ready(function(){
               $("#btn_rem").click(function(){
@@ -209,14 +213,25 @@
                 <br>
                 <button id="btn_emp">Empty the div element</button>
     </div>
+    <!-- jQuery - Get and Set CSS Classes -->
     <div style="border: 1px solid black;text-align: center;">
         <!-- jQuery - Get and Set CSS Classes -->
+        <h1>jQuery - Get and Set CSS Classes</h1>
         <script>
             $(document).ready(function(){
               $("#btn_elem").click(function(){
                 $("#h1, #h2, #pra").addClass("blue");
                 $("#div_elem").addClass("important");
               });
+
+              $("#btn_remo").click(function(){
+                $("h1, h2, p").removeClass("blue");
+              });
+
+              $("#btn_togg").click(function(){
+                $("#h1_tog, #h2_tog").toggleClass("blue");
+              });
+
             });
             </script>
             <style>
@@ -233,10 +248,59 @@
             <h2 id="h2">Heading 2</h2>
             
             <p id="pra">This is a paragraph.</p>
-            
             <div id="div_elem">This is some important text!</div><br>
-            
             <button id="btn_elem">Add classes to elements</button>
+            
+            <!--  -->
+
+            <h1 class="blue">Heading 1</h1>
+            <h2 class="blue">Heading 2</h2>
+            <p class="blue">This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+            <button id="btn_remo">Remove class from elements</button>
+
+            <!-- -->
+            <h1 id="h1_tog">Heading 1</h1>
+            <h2 id="h2_tog">Heading 2</h2>
+            <button id="btn_togg">Toggle class</button>
+    </div>
+     <!-- jQuery - css() Method -->
+    <div style="border: 1px solid black;text-align: center;">
+            <!-- jQuery - css() Method -->
+            <h1>jQuery - css  Method</h1>
+           <script>
+                $(document).ready(function(){
+                  $("#btn_css").click(function(){
+                    alert("Background color = " + $("#p_1").css("background-color"));
+                  });
+
+                  $("#btn_css_chng").click(function(){
+                   $("#p_2").css("background-color", "yellow");
+                 });
+
+                  $("#btn_multi").click(function(){
+                    $("#p_3").css({"background-color": "yellow", "font-size": "200%"});
+                 });
+
+                });
+                </script>
+                <h2>This is a heading</h2>
+
+                <p id="p_1" style="background-color:#ff0000">This is a paragraph.</p>
+                
+                <button id="btn_css">Return background-color of p</button>
+
+                <!--- -->
+                <h2>This is a heading</h2>
+                <p id="p_2" style="background-color:#00ff40">This is a paragraph.</p>
+                <button id="btn_css_chng">Set background-color of p</button>
+
+                <!-- -->
+                <h2>This is a heading</h2>
+                <p id="p_3" style="background-color:#0033ff">This is a paragraph.</p>             
+
+                <button id="btn_multi">Set multiple styles for p</button>
+
     </div>
     
 </body>
