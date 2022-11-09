@@ -302,6 +302,98 @@
                 <button id="btn_multi">Set multiple styles for p</button>
 
     </div>
+    <!--jQuery - Dimensions-->
+    <div style="border: 1px solid black;text-align: center;">
+        <!--jQuery - Dimensions-->
+        <h1>jQuery - Dimensions</h1>
+        <script>
+            $(document).ready(function(){
+              $("#btn_dim_1").click(function(){
+                var txt = "";
+                txt += "Width of div: " + $("#div_dim_1").width() + "</br>";
+                txt += "Height of div: " + $("#div_dim_1").height();
+                $("#div_dim_1").html(txt);
+              });
+              $("#btn_dim_2").click(function(){
+                var txt = "";
+                txt += "Width of div: " + $("#div_dim_2").width() + "</br>";
+                txt += "Height of div: " + $("#div_dim_2").height() + "</br>";
+                txt += "Inner width of div: " + $("#div_dim_2").innerWidth() + "</br>";
+                txt += "Inner height of div: " + $("#div_dim_2").innerHeight();
+                $("#div_dim_2").html(txt);
+              });
+              $("#btn_dim_3").click(function(){
+                var txt = "";
+                txt += "Width of div: " + $("#div_dim_3").width() + "</br>";
+                txt += "Height of div: " + $("#div_dim_3").height() + "</br>";
+                txt += "Outer width of div: " + $("#div_dim_3").outerWidth() + "</br>";
+                txt += "Outer height of div: " + $("#div_dim_3").outerHeight();
+                $("#div_dim_3").html(txt);
+              });
+              $("#btn_dim_4").click(function(){
+                var txt = "";
+                txt += "Document width/height: " + $(document).width();
+                txt += "x" + $(document).height() + "\n";
+                txt += "Window width/height: " + $(window).width();
+                txt += "x" + $(window).height();
+                alert(txt);
+              });
+            });
+            </script>
+            <style>
+            #div_dim_1{
+              height: 100px;
+              width: 300px;
+              padding: 10px;
+              margin: 3px;
+              margin-left: 38%;
+              border: 1px solid blue;
+              background-color: lightblue;
+            }
+            #div_dim_2{
+              height: 100px;
+              width: 300px;
+              padding: 10px;
+              margin: 3px;
+              margin-left: 38%;
+              border: 1px solid blue;
+              background-color: lightblue;
+            }
+            #div_dim_3{
+              height: 100px;
+              width: 300px;
+              padding: 10px;
+              margin: 3px;
+              margin-left: 38%;
+              border: 1px solid blue;
+              background-color: lightblue;
+            }
+            </style>
+            <div id="div_dim_1"></div>
+            <br>
+            <button id="btn_dim_1">Display dimensions of div</button>
+            <p id="p__1">width() - returns the width of an element.</p>
+            <p id="p__2">height() - returns the height of an element.</p>
+            <!--  -->
+
+            <div id="div_dim_2"></div>
+            <br>
+            <button id="btn_dim_2">Display dimensions of div</button>
+            <p id="p__3">innerWidth() - returns the width of an element (includes padding).</p>
+            <p id="p__4">innerHeight() - returns the height of an element (includes padding).</p>
+            <!--    -->
+
+            <div id="div_dim_3"></div>
+            <br>
+            <button id="btn_dim_3">Display dimensions of div</button>
+            
+            <p id="p__5">outerWidth() - returns the width of an element (includes padding and border).</p>
+            <p id="p__6">outerHeight() - returns the height of an element (includes padding and border).</p>
+            <!--  -->
+
+            <button id="btn_dim_4">Display dimensions of document and window</button>
+
+    </div>
     
 </body>
 </html>
