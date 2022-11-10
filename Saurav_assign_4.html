@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignmemt 4 </title>
+
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <!--jQuery Traversing - Ancestors-->
+   <div style="border: 1px solid black;text-align: center;">
+
+    
+    <!-- jQuery Traversing - Ancestors-->
+    <h1>jQuery Traversing - Ancestors</h1>
+      <script>
+        $(document).ready(function(){
+          $("span").parent().css({"color": "red", "border": "1px solid red"});
+        });
+        </script>
+        <style>
+            .ancestors * { 
+              display: block;
+              border: 2px solid lightgrey;
+              color: lightgrey;
+              padding: 5px;
+              margin: 15px;
+
+            }
+            h1{
+                color: black;
+            }
+            </style>
+            <h1>jQuery parent() Method</h1>
+            <div class="ancestors">
+                <div style="width:500px;margin-left: 30%;">div (great-grandparent)
+                  <ul>ul (grandparent)  
+                    <li>li (direct parent)
+                      <span>span</span>
+                    </li>
+                  </ul>   
+                </div>
+              
+                <div id="div_1" style="width:500px;margin-left: 30%;">div (grandparent)   
+                  <p>p (direct parent)
+                    <span>span</span>
+                  </p> 
+                </div>
+              </div>
+   </div> 
+   <div  style="border: 1px solid black;text-align: center;">
+    
+   <script>
+    $(document).ready(function(){
+      $("#span_1").parents().css({"color": "red", "border": "1px solid red"});
+    });
+
+    </script>
+
+    <style>
+    .ancestors_1 * { 
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+    </style>
+    <h1>jQuery parents() Method</h1>
+    <div class="ancestors_1">body (great-great-grandparent)
+        <div id="div_2" style="width:500px;margin-left: 30%;">div (great-grandparent)
+          <ul>ul (grandparent)  
+            <li style="margin-bottom: 10px;">li (direct parent)
+              <span id="span_1">span</span>
+            </li>
+          </ul>   
+        </div>
+    </div>
+   </div> 
+   <div style="border: 1px solid black;text-align: center;">
+
+    <script>
+        $(document).ready(function(){
+          $("#span_2").parentsUntil("div").css({"color": "red", "border": "2px solid red"});
+        });
+        </script>
+
+     <style>
+          .ancestors_3 * { 
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+          }
+    </style>
+    <h1>jQuery parentsUntil() Method</h1>
+    <div class="ancestors_3"> body (great-great-grandparent)
+        <div id="div_3" style="width:500px;margin-left: 30%;">div (great-grandparent)
+          <ul id="unorder_1">ul (grandparent)  
+            <li id="list_1">li (direct parent)
+              <span id="span_2">span</span>
+            </li>
+          </ul>   
+        </div>
+    </div>
+   </div>
+
+    <!-- jQuery Traversing - Descendants-->
+   <div style="border: 1px solid black;text-align: center;">
+        <h1> jQuery Traversing - Descendants</h1>
+
+        <script>
+            $(document).ready(function(){
+              $(".descendants").children().css({"color": "red", "border": "2px solid red"});
+            });
+            </script>
+            <style>
+            .descendants * { 
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+              }
+              </style>
+              <h1>jQuery children() Method</h1>
+              <div class="descendants" style="width:500px;margin-left: 30%;">div (current element) 
+                <p>p (child)
+                  <span id="span_3">span (grandchild)</span>   
+                </p> 
+              </div>
+
+   </div>
+   <div style="border: 1px solid black;text-align: center;">
+
+        <script>
+        $(document).ready(function(){
+          $(".descendants_2").find("span").css({"color": "red", "border": "2px solid red"});
+        });
+        </script>
+        <style>
+            .descendants_2{ 
+              display: block;
+              border: 2px solid lightgrey;
+              color: lightgrey;
+              padding: 5px;
+              margin: 15px;
+            }
+            </style>
+            <h1>jQuery find() Method</h1>
+            <div class="descendants_2" style="width:500px;margin-left: 30%;">div (current element) 
+                <p>p (child)
+                  <span id="span_4">span (grandchild)</span>   
+                </p> 
+              </div>
+
+   </div>
+
+   <!--jQuery Traversing - Siblings-->
+   <div style="border: 1px solid black;text-align: center;">
+    <h1>jQuery Traversing - Siblings</h1>
+    <script>
+        $(document).ready(function(){
+          $(".h2_1").siblings().css({"color": "red", "border": "2px solid red"});
+        });
+        $(document).ready(function(){
+          $(".h2_2").next().css({"color": "red", "border": "2px solid red"});
+        });
+        $(document).ready(function(){
+          $(".h2_3").nextAll().css({"color": "red", "border": "2px solid red"});
+        });
+        $(document).ready(function(){
+           $(".h2_4").nextUntil(".h6_1").css({"color": "red", "border": "2px solid red"});
+         });
+
+        </script>
+        <style>
+            .siblings { 
+              display: block;
+              border: 2px solid lightgrey;
+              color: lightgrey;
+              padding: 5px;
+              margin: 15px;
+              width: 50%;
+              margin-left: 20%;
+            }
+
+             .next { 
+               display: block;
+               border: 2px solid lightgrey;
+               color: lightgrey;
+               padding: 5px;
+               margin: 15px;
+               width: 50%;
+               margin-left: 20%;
+             }
+             .nextAll { 
+               display: block;
+               border: 2px solid lightgrey;
+               color: lightgrey;
+               padding: 5px;
+               margin: 15px;
+               width: 50%;
+              margin-left: 20%;
+             }
+             .nextUntil{ 
+               display: block;
+               border: 2px solid lightgrey;
+               color: lightgrey;
+               padding: 5px;
+               margin: 15px;
+               width: 50%;
+              margin-left: 20%;
+             }
+            </style>
+            <h1>jQuery siblings() Method</h1>
+                <div class="siblings">div (parent)
+                  <p class="p_1">p</p>
+                  <span class="span_5">span</span>
+                  <h2 class="h2_1">h2</h2>
+                  <h3 class="h3_1">h3</h3>
+                </div>
+                <h1>jQuery next() Method</h1>
+                <div class="next">div (parent)
+                  <p class="p_2">p</p>
+                  <span class="span_6">span</span>
+                  <h2 class="h2_2">h2</h2>
+                  <h3 class="h3_2">h3</h3>
+                </div>
+                <h1>jQuery nextAll() Method</h1>
+                <div class="nextAll">div (parent)
+                    <p class="p_3">p</p>
+                    <span class="span_7">span</span>
+                    <h2 class="h2_3">h2</h2>
+                    <h3 class="h3_3">h3</h3>
+                    <p class="p_4">p</p>
+                  </div>
+                  <h1>jQuery nextUntil() Method</h1>
+                  <div class="nextUntil">div (parent)
+                    <p class="p_5">p</p>
+                    <span class="span_8">span</span>
+                    <h2 class="h2_4">h2</h2>
+                    <h3 class="h3_4">h3</h3>
+                    <h4 class="h4_1">h4</h4>
+                    <h5 class="h5_1">h5</h5>
+                    <h6 class="h6_1">h6</h6>
+                    <p class="p_6">p</p>
+                  </div>
+   </div >
+
+   <!--jQuery Traversing - Filtering-->
+   <div style="border: 1px solid black;text-align: center;">
+    <script>
+        $(document).ready(function(){
+          $("#div_1,#div_2,#div_3").first().css("background-color", "yellow");
+        });
+        </script>
+        <h1>Welcome to My Homepage</h1>
+
+        <p>This is a paragraph.</p>
+        
+        <div id="div_1" style="border: 1px solid black;">
+          <p>A paragraph in a div.</p>
+          <p>Another paragraph in a div.</p>
+        </div>
+        <br>
+        
+        <div id="div_2" style="border: 1px solid black;">
+          <p>A paragraph in another div.</p>
+          <p>Another paragraph in another div.</p>
+        </div>
+        <br>
+        <div id="div_3" style="border: 1px solid black;">
+          <p>A paragraph in another div.</p>
+          <p>Another paragraph in another div.</p>
+        </div>
+   </div>
+</body>
+</html>
