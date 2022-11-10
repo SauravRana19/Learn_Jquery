@@ -258,28 +258,81 @@
    <div style="border: 1px solid black;text-align: center;">
     <script>
         $(document).ready(function(){
-          $("#div_1,#div_2,#div_3").first().css("background-color", "yellow");
+          $("#div_5,#div_6,#div_7").first().css("background-color", "yellow");
         });
-        </script>
-        <h1>Welcome to My Homepage</h1>
+        $(document).ready(function(){
+          $("#div_8,#div_9,#div_10").last().css("background-color", "yellow");
+        });
+        $(document).ready(function(){
+          $("#p_eq1,#p_eq2,#p_eq3,#p_eq4").eq(1).css("background-color", "yellow");
+        });
+        $(document).ready(function(){
+          $("p").filter(".intro").css("background-color", "yellow");
+        });
+        $(document).ready(function(){
+          $("#p_eq5,#p_eq6").not(".intro_1,.intro_2").css("background-color", "yellow");
+        });
 
-        <p>This is a paragraph.</p>
+        </script>
+        <h1 style="margin-right: 7%">jQuery first() Method <br> <br>Welcome to My Homepage</h1>
+
+        <p style="margin-right: 10%;">This is a paragraph.</p>
         
-        <div id="div_1" style="border: 1px solid black;">
+        <div id="div_5" style="border: 1px solid black;width: 50%;margin-left: 20%;">
           <p>A paragraph in a div.</p>
           <p>Another paragraph in a div.</p>
         </div>
         <br>
         
-        <div id="div_2" style="border: 1px solid black;">
+        <div id="div_6" style="border: 1px solid black;width: 50%;margin-left: 20%;">
           <p>A paragraph in another div.</p>
           <p>Another paragraph in another div.</p>
         </div>
         <br>
-        <div id="div_3" style="border: 1px solid black;">
+        <div id="div_7" style="border: 1px solid black;width: 50%;margin-left: 20%;">
           <p>A paragraph in another div.</p>
           <p>Another paragraph in another div.</p>
         </div>
+
+        <!-- jQuery last() Method -->
+        
+        <h1 style="margin-right: 7%">jQuery last() Method <br> <br>Welcome to My Homepage</h1>
+
+        <p style="margin-right: 10%;">This is a paragraph.</p>
+        
+        <div id="div_8" style="border: 1px solid black;width: 50%;margin-left: 20%;">
+          <p>A paragraph in a div.</p>
+          <p>Another paragraph in a div.</p>
+        </div>
+        <br>
+        
+        <div id="div_9" style="border: 1px solid black;width: 50%;margin-left: 20%;">
+          <p>A paragraph in another div.</p>
+          <p>Another paragraph in another div.</p>
+        </div>
+        <br>
+        <div id="div_10" style="border: 1px solid black;width: 50%;margin-left: 20%;">
+          <p>A paragraph in another div.</p>
+          <p>Another paragraph in another div.</p>
+        </div>
+
+        <h1>jQuery eq() method</h1>
+        <p id="p_eq1">My name is Donald (index 0).</p>
+        <p id="p_eq2">Donald Duck (index 1).</p>
+        <p id="p_eq3">I live in Duckburg (index 2).</p>
+        <p id="p_eq4">My best friend is Mickey (index 3).</p>
+
+        <h1>jQuery filter() Method</h1>
+        <p>My name is Donald.</p>
+        <p class="intro">I live in Duckburg.</p>
+        <p class="intro">I love Duckburg.</p>
+        <p>My best friend is Mickey.</p>
+
+        <h1>jQuery not() Method</h1>
+        <p id="p_eq5">My name is Donald.</p>
+        <p class="intro_1">I live in Duckburg.</p>
+        <p class="intro_2">I love Duckburg.</p>
+        <p id="p_eq6">My best friend is Mickey.</p>
    </div>
 </body>
 </html>
